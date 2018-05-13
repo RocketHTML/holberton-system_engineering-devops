@@ -1,0 +1,17 @@
+--2018-05-13 16:27:02--  http://indeedeng.github.io/imhotep/files/nasa_19950801.tsv
+
+Resolving indeedeng.github.io (indeedeng.github.io)... 185.199.108.153, 185.199.109
+.153, 185.199.110.153, ...
+Connecting to indeedeng.github.io (indeedeng.github.io)|185.199.108.153|:80... conn
+ected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: http://opensource.indeedeng.io/imhotep/files/nasa_19950801.tsv [following
+]
+--2018-05-13 16:27:02--  http://opensource.indeedeng.io/imhotep/files/nasa_19950801
+.tsv
+Resolving opensource.indeedeng.io (opensource.indeedeng.io)... 185.199.108.153, 185
+.199.109.153, 185.199.110.153, ...
+Reusing existing connection to indeedeng.github.io:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 2339220 (2.2M) [text/tab-separated-values]
+Saving to: ‘nasa_19950801.tsv
