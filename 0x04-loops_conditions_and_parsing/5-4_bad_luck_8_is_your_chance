@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Write a Bash script that displays Holberton School 10 times.
+
+nums=1
+end=10
+while [ $nums -le "$end" ] 
+do
+	if [ $nums -eq 4 ]
+	then
+		echo "bad luck"
+	fi
+	if [ $nums -eq 8 ]
+	then
+		echo "good luck"
+	fi
+	if [[ ! $nums -eq 8 && ! $nums -eq 4 ]]
+	then
+		echo "Holberton School"
+	fi
+	((nums++))
+done
