@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # only show the part of the filename after the dash
 
-list="$(ls ./*)"
+list="$(ls)"
 
 for i in $list
 do
