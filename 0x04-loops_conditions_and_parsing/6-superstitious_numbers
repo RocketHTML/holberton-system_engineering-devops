@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Write a Bash script that displays Holberton School 10 times.
+
+nums=1
+end=20
+while [ $nums -le "$end" ] 
+do
+	echo "$nums"
+	case "$nums" in
+		4 ) echo "bad luck from China";;
+		9 ) echo "bad luck from Japan";;
+		17 ) echo "bad luck from Italy";;
+	esac
+	((nums++))
+done
