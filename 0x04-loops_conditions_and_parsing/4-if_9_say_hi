@@ -3,7 +3,7 @@
 
 nums=1
 end=10
-until [ $((nums++)) -gt "$end" ] 
+while [ $((nums++)) -le "$end" ] 
 do
 	if [ $nums -eq 11 ]
 	then
