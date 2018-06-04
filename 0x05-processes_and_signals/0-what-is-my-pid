@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
+# This process will echo its own pid
  
 echo $$
