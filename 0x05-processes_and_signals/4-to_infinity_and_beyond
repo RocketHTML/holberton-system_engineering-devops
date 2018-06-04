@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # infinately print message
+# shellcheck disable=SC2009
 
 while ((1))
 do
-	sleep 2
 	echo "To infinity and beyond"
+	sleep 2
 done
