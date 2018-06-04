@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Display a list of processes containing the word "bash"
+# shellcheck disable=SC2009
+### show all processes for all users
+### including background ones which may not have a TTY
+### Display a user-oriented format
+### Show process hierarchy
+ 
+ps -auxf | grep -e bash
