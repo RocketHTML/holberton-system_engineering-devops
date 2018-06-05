@@ -2,6 +2,12 @@
 # infinately print message
 # shellcheck disable=SC2009
 
+function invincible() {
+	echo "I am invincible!!!"
+}
+
+trap invincible 2
+
 while ((1))
 do
 	echo "$$: To infinity and beyond"
