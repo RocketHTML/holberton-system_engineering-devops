@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+### kills a particular process
+# shellcheck disable=SC2009
+
+pkill -sigkill -f "7-highlander"
