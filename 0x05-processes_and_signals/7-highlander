@@ -6,7 +6,7 @@ function invincible() {
 	echo "I am invincible!!!"
 }
 
-trap invincible 2
+trap invincible SIGTERM
 
 while ((1))
 do
