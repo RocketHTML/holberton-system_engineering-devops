@@ -2,7 +2,7 @@
 
 IFS=$'\n'
 set -f
-x=$(cat /etc/hosts.new)
+x=$(cat /etc/hosts)
 
 echo "8.8.8.8 facebook.com" > /tmp/hosts
 for i in $x
