@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+name="5-is_the_host_on_the_network"
+
+if [ $# -lt 1 ]
+then
+	echo "Usage: $name {IP_ADDRESS}"
+	exit 0
+fi
+ping -c 5 "$1"
