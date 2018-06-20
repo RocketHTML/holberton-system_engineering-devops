@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# show's all active IPv4 IP's on the machine
+
+ip route | tail -n +2 | cut -d ' ' -f 12
+getent hosts | head -n 1| cut -d ' ' -f 1
