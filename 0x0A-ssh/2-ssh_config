@@ -1,0 +1,3 @@
+hosts *
+	PasswordAuthentication no
+	IdentityFile ~/.ssh/holberton
