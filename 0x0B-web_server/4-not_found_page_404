@@ -10,4 +10,4 @@ echo "Holberton School" > /usr/share/nginx/html/index.html
 echo "Ceci n'est pas une page" > /usr/share/nginx/html/custom_404.html
 sed -i "30i $INJECT" $FILE
 sed -i "31i $ERROR" $FILE
-nginx -s reload
+service nginx restart
