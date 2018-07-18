@@ -5,6 +5,6 @@ INJECT="\nrewrite ^/redirect_me/?$ http://www.gaiaonline.com permanent;\n"
 FILE=/etc/nginx/sites-available/default
 sudo apt-get update
 sudo apt-get -y install nginx
-echo "Holberton School" >> /usr/share/nginx/html/index.html
+echo "Holberton School" > /usr/share/nginx/html/index.html
 sudo sed -i "30i $INJECT" $FILE
 service nginx start
