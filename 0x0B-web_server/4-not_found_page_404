@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # automated install and start of nginx server
 # this instance will redirect when /redirect is visited
-INJECT="\nrewrite ^/redirect_me/?$ http://www.gaiaonline.com permanent;\n"
+INJECT="\\\nrewrite ^/redirect_me/?$ http://www.gaiaonline.com permanent;\n"
 ERROR="error_page 404 /custom_404.html;\nlocation = /custom_404.html {\nroot /usr/share/nginx/html;\ninternal;\n}\n"
 FILE=/etc/nginx/sites-available/default
 sudo -s
