@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 # Beginning of debugging series
+sudo apt-get update
+sudo apt-get install apache2
+echo "Hello World" > /var/www/html/index.html
 sudo service apache2 start
