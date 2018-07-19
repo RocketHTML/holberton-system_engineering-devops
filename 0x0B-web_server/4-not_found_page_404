@@ -1,15 +1,13 @@
 #!/usr/bin/env bash
 # automated install and start of nginx server
 # this instance will redirect when /redirect is visited
-INJECT="\nrewrite ^/redirect_me/?$ http://www.gaiaonline.com permanent;\n"
+INJECT="\\\nrewrite ^/redirect_me/?$ http://www.gaiaonline.com permanent;\n"
 ERROR="error_page 404 /custom_404.html;\nlocation = /custom_404.html {\nroot /usr/share/nginx/html;\ninternal;\n}\n"
 FILE=/etc/nginx/sites-available/default
-sudo -s
-apt-get update
-apt-get -y install nginx
+sudo apt-get update
+sudo apt-get -y install nginx
 echo "Holberton School" > /usr/share/nginx/html/index.html
 echo "Ceci n'est pas une page" > /usr/share/nginx/html/custom_404.html
-nginx
 sed -i "30i $INJECT" $FILE
-sed -o "31i $ERROR" $FILE
-nginx -s reload
+sed -i "31i $ERROR" $FILE
+service nginx restart

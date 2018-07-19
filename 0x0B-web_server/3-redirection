@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # automated install and start of nginx server
 # this instance will redirect when /redirect is visited
-INJECT="\nrewrite ^/redirect_me/?$ http://www.gaiaonline.com permanent;\n"
+INJECT="\\\nrewrite ^/redirect_me/?$ http://www.gaiaonline.com permanent;\n"
 FILE=/etc/nginx/sites-available/default
 sudo apt-get update
 sudo apt-get -y install nginx
