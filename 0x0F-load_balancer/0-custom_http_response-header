@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# install nginx and add custom header to sites-enabled file
-FILE="/etc/nginx/sites-enabled/default"
+# install nginx and add custom header to sites-enabled/available file
+FILE="/etc/nginx/sites-available/default"
 sudo apt-get update
 sudo apt-get -y install nginx
 sudo sed -i "22i \\\tadd_header X-Served-By $HOSTNAME;" $FILE
