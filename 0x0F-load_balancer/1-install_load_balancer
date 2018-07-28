@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# input haproxy confic options
+sudo apt-get -y update
+sudo apt-get install -y haproxy=1.5\*
+FILE=/etc/haproxy/haproxy.cfg
+echo "listen 343-lb-01" > $FILE
+echo "bind *:80" >> $FILE
+echo "mode http" >> $FILE
+echo "balance roundrobin" >> $FILE
+echo "server 343-web-01 35.237.187.19 check" >> $FILE
+echo "server 343-web-02 35.196.245.228 check" >> $FILE
+sudo service haproxy restart
