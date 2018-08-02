@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
+# runs whoami as the requested user
 usr="$1"
 sudo -u "$usr" whoami
