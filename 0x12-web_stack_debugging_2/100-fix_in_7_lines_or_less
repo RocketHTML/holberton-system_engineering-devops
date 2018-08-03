@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# corrects nginx server to run as nginx user
+pkill -f apache2
+sudo chown nginx:nginx /etc/nginx/nginx.conf
+sudo chown nginx:nginx /etc/nginx/sites-available/default
+sudo sed -i 's/80 default_server/8080 default_server/' /etc/nginx/sites-available/default
+sudo -u nginx service nginx start
