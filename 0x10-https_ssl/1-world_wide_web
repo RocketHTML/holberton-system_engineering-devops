@@ -5,7 +5,7 @@ default=( www lb-01 web-01 web-02 )
 function parse {
     # grep's answer line of dig command
     # args: domain, subdomain
-    line=$(dig "$1" | grep -A1 'ANSWER SECTION:')
+    line=$(dig "$2.$1" | grep -A1 'ANSWER SECTION:')
     rtype=$(echo -n "$line" | awk '{print $4}')
     dest=$(echo -n "$line" | awk '{print $5}')
     msg="The subdomain $2 is a $rtype record and points to $dest"
