@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# prints information about subdomains
+default=( lb-01 web-01 web-02 )
+msg='echo The subdomain $sub is a $rec and points to $dest'
+args=$(( $# - 1 ))
+if [ $args -eq 1 ]
+then
+    # do function for $1 and each default (for loop)
+else
+    # do function on $1 $2 only
