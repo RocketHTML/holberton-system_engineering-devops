@@ -1,10 +1,26 @@
 #!/usr/bin/env bash
 # prints information about subdomains
-default=( lb-01 web-01 web-02 )
-msg='echo The subdomain $sub is a $rec and points to $dest'
-args=$(( $# - 1 ))
-if [ $args -eq 1 ]
+default=( www lb-01 web-01 web-02 )
+
+function parse {
+    # grep's answer line of dig command
+    # args: domain, subdomain
+    line=$(dig "$1" | grep -A1 'ANSWER SECTION:')
+    rtype=$(echo -n "$line" | awk '{print $4}')
+    dest=$(echo -n "$line" | awk '{print $5}')
+    msg="The subdomain $2 is a $rtype record and points to $dest"
+    echo "$msg" | tr '\n' ' ' | tr -s ' '
+    echo
+}
+
+if [ "$#" -eq 1 ]
 then
     # do function for $1 and each default (for loop)
+    for sub in "${default[@]}"
+    do
+        parse "$1" "$sub"
+    done
 else
     # do function on $1 $2 only
+    parse "$1" "$2"
+fi
