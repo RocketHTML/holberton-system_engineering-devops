@@ -34,7 +34,7 @@
 
 .bigtriangle {
     left: 300px;
-    top: 300px;
+    top: 310px;
 }
 
 /*              */
@@ -159,6 +159,8 @@
     animation: visitor_to_five 2s ease-in-out 0.2s infinite;
 }
 .smalltriangle.seven{
+    left: 510px;
+    top: 260px;
     transform: rotate(-110deg);
     animation: visitor_to_webserver 7s ease-in-out 5s infinite;
 }

@@ -1,25 +1,150 @@
+.label {
+    font-size: 40px;
+    left: 700px;
+    color: #D7CEB2;
+}
+
+
+.label.requests{
+
+}
+.label.proxy{
+    top: 260px;
+}
+.label.backendserver{
+    top:420px;
+}
+
 .node.one {
-    left: 50px;
+    left: 225px;
     top: 200px;
 }
 
 .node.two {
-    left: 150px;
-    top: 175px;
+    left: 250px;
+    top: 120px;
 }
 
 .node.three {
-    left: 250px;
+    left: 350px;
     top: 100px;
 }
 
 .node.four {
-    left: 350px;
-    top: 150px;
+    left: 500px;
+    top: 100px;
+}
+
+.node.five {
+    left: 600px;
+    top: 175px;
+}
+
+.node.six.root {
+    left: 400px;
+    top: 75px;
+}
+
+.node.proxy {
+    left: 400px;
+    top: 275px;
+}
+
+.node.seven {
+    left: 200px;
+    top: 420px;
+}
+
+.node.eight {
+    left: 400px;
+    top: 420px;
+}
+
+.node.nine {
+    left: 600px;
+    top: 420px;
 }
 
 
 .bigtriangle {
-    left: 300px;
+    left: 0px;
     top: 300px;
+    border-top: 0px solid transparent;
+    border-left: 200px solid transparent;
+    border-right: 200px solid transparent;
+    border-bottom: 1px solid #93A8AC;
+    opacity: .5;
 }
+
+.bigtriangle.right {
+    left: 425px;
+}
+
+.bigtriangle.chip {
+    top: 100px;
+}
+
+.bigtriangle.chip.ten {
+    left: 200px;
+    top: 430px;
+}
+
+.bigtriangle.chip.eleven {
+    left: 400px;
+    top: 430px;
+}
+.bigtriangle.chip.twelve {
+    left: 600px;
+    top: 430px;
+}
+@keyframes one_to_proxy{ from{left:225; top:200;} to{left:400px; top:275;} }
+@keyframes two_to_proxy{ from{left:250; top:120;} to{left:400px; top:275;} }
+@keyframes three_to_proxy{ from{left:350; top:100;} to{left:400px; top:275;} }
+@keyframes four_to_proxy{ from{left:500; top:100;} to{left:400px; top:275;} }
+@keyframes five_to_proxy{ from{left:600; top:175;} to{left:400px; top:275;} }
+@keyframes six_to_proxy{ from{left:400; top:75;} to{left:400px; top:275;} }
+
+@keyframes one_proxy_one_chip {
+    0% {
+
+    }
+
+    100% {
+        
+    }
+
+    50% {
+        left:407px; top:282;
+    }
+
+}
+
+@keyframes one_proxy_one_agent {
+    0% {
+
+    }
+
+    100% {
+        
+    }
+
+    50% {
+        left:400px; top:275;
+    }
+
+}
+
+.bigtriangle.chip {
+    animation: one_proxy_one_chip 5s ease-in-out 0.2s infinite;
+}
+.bigtriangle.chip.ten { transform: rotate(-45deg);
+                         animation-delay: 3s;}
+.bigtriangle.chip.eleven { transform: rotate(90deg); 
+                            animation-delay: 0s}
+.bigtriangle.chip.twelve { transform: rotate(45deg); 
+                            animation-delay: 1.5s}
+
+
+.node.agent {animation: one_proxy_one_agent 5s ease-in-out 0.2s infinite;}
+.node.agent.one {animation-delay: .4s}
+
