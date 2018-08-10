@@ -1,6 +1,10 @@
 # 5 things to know about the fullstack
 
 ![dns lookup](https://github.com/RocketHTML/holberton-system_engineering-devops/blob/master/0x11-what_happens_when_your_type_holbertonschool_com_in_your_browser_and_press_enter/gifs/dns_lookup.gif)
+![proxy](https://github.com/RocketHTML/holberton-system_engineering-devops/blob/master/0x11-what_happens_when_your_type_holbertonschool_com_in_your_browser_and_press_enter/gifs/load_balance_V2.gif)
+![servers](https://github.com/RocketHTML/holberton-system_engineering-devops/blob/master/0x11-what_happens_when_your_type_holbertonschool_com_in_your_browser_and_press_enter/gifs/server_inside.gif)
+![dataframe](https://github.com/RocketHTML/holberton-system_engineering-devops/blob/master/0x11-what_happens_when_your_type_holbertonschool_com_in_your_browser_and_press_enter/gifs/tcp_ip.gif)
+![firewall](https://github.com/RocketHTML/holberton-system_engineering-devops/blob/master/0x11-what_happens_when_your_type_holbertonschool_com_in_your_browser_and_press_enter/gifs/firewall_V3.gif)
 
 ## References
 
