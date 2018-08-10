@@ -5,7 +5,7 @@ Here's five basics every developer should know, as they developing those amazing
 ## 1. IP Address
 Every device connected to the internet is identified by a unique IP address. One computer communicates with another by sending data in segments, known as frames, and attaching the IP address to the header of each frame. The receiving computer can then respond the sender by simply swapping the source and destination addresses.
 
-![dataframe](https://github.com/RocketHTML/holberton-system_engineering-devops/blob/master/0x11-what_happens_when_your_type_holbertonschool_com_in_your_browser_and_press_enter/gifs/tcp_IP.gif)
+![dataframe](https://github.com/RocketHTML/holberton-system_engineering-devops/blob/master/0x11-what_happens_when_your_type_holbertonschool_com_in_your_browser_and_press_enter/gifs/tcp_ip.gif)
 
 A port number, segment number, and content block, are together known as a TCP Segment. So when you loaded this page, the blog, the gifs, and text, were all sent to your computer in segments, and then re-membered for your viewing pleasure, in a few milliseconds.
 
