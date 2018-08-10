@@ -1,11 +1,13 @@
 # 5 things to know about the fullstack
 
+Here's five basics every developer should know, before developing those amazing, scalable web applications.
+
 ## 1. IP Address
-Every computer is identified by a unique IP address. One computer communicates with another by sending data in segments, known as frames, attaching the destined ip address to the header of the frame. The recieving computer can easily locate the sender by simply swapping the source and destination addresses in their reply.
+Every device connected to the internet is identified by a unique ip address. One computer communicates with another by sending data in segments, known as frames, and attaching the ip address to the header of each frame. The recieving computer can then respond the sender by simply swapping the source and destination addresses.
 
 ![dataframe](https://github.com/RocketHTML/holberton-system_engineering-devops/blob/master/0x11-what_happens_when_your_type_holbertonschool_com_in_your_browser_and_press_enter/gifs/tcp_ip.gif)
 
-A port number, segment number, and content block, are together known as a TCP Segment. When you loaded this page, the blog, the gifs, and text, were all sent to your computer in chunks, and then re-membered for your viewing pleasure in the blink of an eye.
+A port number, segment number, and content block, are together known as a TCP Segment. So when you loaded this page, the blog, the gifs, and text, were all sent to your computer in segments, and then re-membered for your viewing pleasure, in a few miliseconds.
 
 ## 2. Internet
 In order for you to have found this blog, your browser needed to find this server's ip address. So when you typed up the domain url and pressed enter, your computer made a request to the world's public registry, in search for an ip address paired with that domain. 
@@ -55,7 +57,7 @@ In conclusion, when you type a url into the browser and press enter, your comput
 
 In the commercial world, that target ip address is usually a proxy server which will deliver the request to a backend server.
 
-The backend server will process it and respond to the proxy, which which will respond to your computer, which will pieces it together and presents it to you! All in the blink of an eye.
+The backend server will process it and respond to the proxy, which which will respond to your computer, which will pieces it together and presents it to you. All in the blink of an eye.
 
 ## References
 
