@@ -1,5 +1,7 @@
 # 5 things to know about the fullstack
 
+![dns lookup](https://github.com/RocketHTML/holberton-system_engineering-devops/blob/master/0x11-what_happens_when_your_type_holbertonschool_com_in_your_browser_and_press_enter/gifs/dns_lookup.gif)
+
 ## References
 
 [How DNS Works](https://howdns.works/)
