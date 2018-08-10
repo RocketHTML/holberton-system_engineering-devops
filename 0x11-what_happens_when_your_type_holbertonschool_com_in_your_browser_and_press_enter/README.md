@@ -8,33 +8,35 @@ Every computer is identified by a unique IP address. One computer communicates w
 A port number, segment number, and content block, are together known as a TCP Segment. When you loaded this page, the blog, the gifs, and text, were all sent to your computer in chunks, and then re-membered for your viewing pleasure in the blink of an eye.
 
 ## 2. Internet
-In order for you to have found this blog, your browser needed to find this server's ip address. So when you typed the domain url and pressed enter, your computer made a request to the world's public registry, in search for the ip address paired with that domain. 
+In order for you to have found this blog, your browser needed to find this server's ip address. So when you typed up the domain url and pressed enter, your computer made a request to the world's public registry, in search for an ip address paired with that domain. 
 
-This blog server's ip address for example, is paired with its domain name on dedicated computers known as name servers. When your request locates a name server, the name server respond with the ip address, and then your computer can find and recieve the blog on its own.
+This server's ip address is kept together with a domain name, on dedicated computers known as name servers. When your request located a name server, the name server responded with an ip address, and then your computer was able to find and recieve this blog on its own.
 
 ![dns lookup](https://github.com/RocketHTML/holberton-system_engineering-devops/blob/master/0x11-what_happens_when_your_type_holbertonschool_com_in_your_browser_and_press_enter/gifs/dns_lookup.gif)
 
-Once you visit the site once, your browser will cache the ip address for while, so that if you ever want revisit the site, your computer will take you there without making the dns lookup request. This saves time on subsequent blog visits.
+After visiting this site once, your browser cached the ip address of the server, to save time on subsequent visits.
 
 ## 3. Load Balancer
-The blog computer that your computer exchanged with was a proxy server, between you and the backend server that fulfilled your request. The proxy server distributes the requests it recieves to multiple backend servers, because one server alone can only serve so many visitors in a milisecond.
+This server is actually a proxy server, between you and the backend server that fulfilled your request.
+
+The proxy server distributes the requests it recieves among multiple backend servers, because one server alone can only serve so many visitors at a time.
 
 ![proxy](https://github.com/RocketHTML/holberton-system_engineering-devops/blob/master/0x11-what_happens_when_your_type_holbertonschool_com_in_your_browser_and_press_enter/gifs/load_balance_V2.gif)
 
-The use of a proxy server allows us to focus on securing the connection to the proxy, and simply cutting off all networking between the outside world and our backend servers. 
+Funneling traffic through a proxy server lets us centralize our focus on security to the proxy, and then we simply cut off all direct communication between the outside world and our backend servers. 
 
 So when you see the little green lock in your browser's url bar for example, it's because the proxy server you're communicating with has SSL or TLS installed, so things like passwords can be encrypted before being sent to and from the proxy, thrawting someone who would intercept those frames from being able to read them.
 
 ## 4. Backend Server
 If the proxy decides that your request is okay, then it forwards it to one of the backend servers. 
 
-It's the backend servers' job to respond to the proxy with the requested content. To do this, each backend server consists of various internal virtual servers, which all handle some aspect of the request. 
+It's the backend servers' job to respond to the proxy with the requested content. To do this, each backend server consists of various internal virtual servers, which each handle some aspect of the request. 
 
-a. The virtual web-server recieves the request and decides what to do. If your request is for static files, like html, javascript, and css, then it'll return that data to the proxy in chunks, which will return it to you in chunks. 
+a. The virtual web-server recieves the request first and decides what to do. If your request is for static files, like html, javascript, and css, then it'll return that data to the proxy in chunks, which will return it to you in chunks. 
 
 b. The web-server will forward requests for dynamic content to the virtual application-server. For example, if the website shows your name and gravitar when you're logged in, then it's because the virtual application server altered the html file to have your name included on the page dynamically.
 
-c. The virtual database-server will store data when it is required to. If you press "publish" on some forum websites, then your post will be sent in chunks to the proxy, and then to a backend server, making it's way from the web server, to the app server, and finally into the database. Likewise, when you make a request to view that post again later, the app server will retrieve it from the database, and send it to the web server, which sends it back out to the proxy. 
+c. The virtual database-server will store data when it is required to. If you press "publish" on some forum websites, then your post will be sent in chunks to the proxy, and then to a backend server, making it's way from the web server, to the app server, and finally into the database. Likewise, when you make a request to view that post again later, the app server will retrieve it from the database, and send it to the web server, which sends it back to the proxy. 
 
 (Backend servers are typically clones of each other, but some resources are unnecessary to clone many times. Databases for example have only a few clones as backup, and they stay in sync by sending messages to one another.)
 
@@ -43,7 +45,7 @@ c. The virtual database-server will store data when it is required to. If you pr
 ## 5. Firewall
 A firewall is a set of instructions we give to our computers, so that they treat different requests differently. We want to control how different requests are handled.
 
-For example, if we only want secure https traffic on our website, then we'll instruct our proxy server respond to an http request by redirecting it into an https request. 
+For example, if we only want secure https traffic on our website, then we'll instruct our proxy server to respond to an http request by redirecting it into an https request. 
 
 Or if we want to ensure that our backend servers only respond to requests that have been channeled through the proxy, then we will instruct them to deny requests that come from any other ip address. Doing so will cause them to respond with a rejection message, rather than by fulfilling the request.
 
@@ -58,11 +60,17 @@ The backend server will process it and respond to the proxy, which which will re
 ## References
 
 [How DNS Works](https://howdns.works/)
-[Directory Service](https://en.wikipedia.org/wiki/Directory_service)
-[How nginx processes a request](http://nginx.org/en/docs/http/request_processing.html)
-[How to Secure HAProxy with Let's Encrypt on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-secure-haproxy-with-let-s-encrypt-on-ubuntu-14-04)
-[HTTP Basics](http://www.ntu.edu.sg/home/ehchua/programming/webprogramming/http_basics.html)
-[How to set up a Firewall with UFW on Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-16-04)
-[CompTIA Network+ Certification [License to Tech]: OSI and TCP/IP Model](https://www.youtube.com/watch?v=1uArp_bSvmA)
 
-[finger pointer icon by Mobiletuxedo]("https://www.flaticon.com/authors/mobiletuxedo") 
+[Directory Service](https://en.wikipedia.org/wiki/Directory_service)
+
+[How nginx processes a request](http://nginx.org/en/docs/http/request_processing.html)
+
+[How to Secure HAProxy with Let's Encrypt on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-secure-haproxy-with-let-s-encrypt-on-ubuntu-14-04)
+
+[HTTP Basics](http://www.ntu.edu.sg/home/ehchua/programming/webprogramming/http_basics.html)
+
+[How to set up a Firewall with UFW on Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-16-04)
+
+[CompTIA Network+ Certification - License to Tech: OSI and TCP/IP Model](https://www.youtube.com/watch?v=1uArp_bSvmA)
+
+[finger pointer icons by Mobiletuxedo]("https://www.flaticon.com/authors/mobiletuxedo") 
