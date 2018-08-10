@@ -73,4 +73,4 @@ The backend server will process it and respond to the proxy, which which will re
 
 [CompTIA Network+ Certification - License to Tech: OSI and TCP/IP Model](https://www.youtube.com/watch?v=1uArp_bSvmA)
 
-[finger pointer icons by Mobiletuxedo]("https://www.flaticon.com/authors/mobiletuxedo") 
+[finger pointer icons by Mobiletuxedo](https://www.flaticon.com/authors/mobiletuxedo) 
