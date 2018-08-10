@@ -1,10 +1,59 @@
 # 5 things to know about the fullstack
 
-![dns lookup](https://github.com/RocketHTML/holberton-system_engineering-devops/blob/master/0x11-what_happens_when_your_type_holbertonschool_com_in_your_browser_and_press_enter/gifs/dns_lookup.gif)
-![proxy](https://github.com/RocketHTML/holberton-system_engineering-devops/blob/master/0x11-what_happens_when_your_type_holbertonschool_com_in_your_browser_and_press_enter/gifs/load_balance_V2.gif)
-![servers](https://github.com/RocketHTML/holberton-system_engineering-devops/blob/master/0x11-what_happens_when_your_type_holbertonschool_com_in_your_browser_and_press_enter/gifs/server_inside.gif)
+## 1. IP Address
+Every computer is identified by a unique IP address. One computer communicates with another by sending data in segments, known as frames, attaching the destined ip address to the header of the frame. The recieving computer can easily locate the sender by simply swapping the source and destination addresses in their reply.
+
 ![dataframe](https://github.com/RocketHTML/holberton-system_engineering-devops/blob/master/0x11-what_happens_when_your_type_holbertonschool_com_in_your_browser_and_press_enter/gifs/tcp_ip.gif)
+
+A port number, segment number, and content block, are together known as a TCP Segment. When you loaded this page, the blog, the gifs, and text, were all sent to your computer in chunks, and then re-membered for your viewing pleasure in the blink of an eye.
+
+## 2. Internet
+In order for you to have found this blog, your browser needed to find this server's ip address. So when you typed the domain url and pressed enter, your computer made a request to the world's public registry, in search for the ip address paired with that domain. 
+
+This blog server's ip address for example, is paired with its domain name on dedicated computers known as name servers. When your request locates a name server, the name server respond with the ip address, and then your computer can find and recieve the blog on its own.
+
+![dns lookup](https://github.com/RocketHTML/holberton-system_engineering-devops/blob/master/0x11-what_happens_when_your_type_holbertonschool_com_in_your_browser_and_press_enter/gifs/dns_lookup.gif)
+
+Once you visit the site once, your browser will cache the ip address for while, so that if you ever want revisit the site, your computer will take you there without making the dns lookup request. This saves time on subsequent blog visits.
+
+## 3. Load Balancer
+The blog computer that your computer exchanged with was a proxy server, between you and the backend server that fulfilled your request. The proxy server distributes the requests it recieves to multiple backend servers, because one server alone can only serve so many visitors in a milisecond.
+
+![proxy](https://github.com/RocketHTML/holberton-system_engineering-devops/blob/master/0x11-what_happens_when_your_type_holbertonschool_com_in_your_browser_and_press_enter/gifs/load_balance_V2.gif)
+
+The use of a proxy server allows us to focus on securing the connection to the proxy, and simply cutting off all networking between the outside world and our backend servers. 
+
+So when you see the little green lock in your browser's url bar for example, it's because the proxy server you're communicating with has SSL or TLS installed, so things like passwords can be encrypted before being sent to and from the proxy, thrawting someone who would intercept those frames from being able to read them.
+
+## 4. Backend Server
+If the proxy decides that your request is okay, then it forwards it to one of the backend servers. 
+
+It's the backend servers' job to respond to the proxy with the requested content. To do this, each backend server consists of various internal virtual servers, which all handle some aspect of the request. 
+
+a. The virtual web-server recieves the request and decides what to do. If your request is for static files, like html, javascript, and css, then it'll return that data to the proxy in chunks, which will return it to you in chunks. 
+
+b. The web-server will forward requests for dynamic content to the virtual application-server. For example, if the website shows your name and gravitar when you're logged in, then it's because the virtual application server altered the html file to have your name included on the page dynamically.
+
+c. The virtual database-server will store data when it is required to. If you press "publish" on some forum websites, then your post will be sent in chunks to the proxy, and then to a backend server, making it's way from the web server, to the app server, and finally into the database. Likewise, when you make a request to view that post again later, the app server will retrieve it from the database, and send it to the web server, which sends it back out to the proxy. 
+
+(Backend servers are typically clones of each other, but some resources are unnecessary to clone many times. Databases for example have only a few clones as backup, and they stay in sync by sending messages to one another.)
+
+![servers](https://github.com/RocketHTML/holberton-system_engineering-devops/blob/master/0x11-what_happens_when_your_type_holbertonschool_com_in_your_browser_and_press_enter/gifs/server_inside.gif)
+
+## 5. Firewall
+A firewall is a set of instructions we give to our computers, so that they treat different requests differently. We want to control how different requests are handled.
+
+For example, if we only want secure https traffic on our website, then we'll instruct our proxy server respond to an http request by redirecting it into an https request. 
+
+Or if we want to ensure that our backend servers only respond to requests that have been channeled through the proxy, then we will instruct them to deny requests that come from any other ip address. Doing so will cause them to respond with a rejection message, rather than by fulfilling the request.
+
 ![firewall](https://github.com/RocketHTML/holberton-system_engineering-devops/blob/master/0x11-what_happens_when_your_type_holbertonschool_com_in_your_browser_and_press_enter/gifs/firewall_V3.gif)
+
+In conclusion, when you type a url into the browser and press enter, your computer begins to send and receive data frames, packets, to and from a target ip address. 
+
+In the commercial world, that target ip address is usually a proxy server which will deliver the request to a backend server.
+
+The backend server will process it and respond to the proxy, which which will respond to your computer, which will pieces it together and presents it to you! All in the blink of an eye.
 
 ## References
 
