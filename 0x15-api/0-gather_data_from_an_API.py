@@ -49,7 +49,7 @@ if user_resp.status_code != 200:
 user = user_resp.json()
 todolist = todos.json()
 res = filter_by_user(todolist, uid)
-print("Employee {} is done with tasks({}/{})".format(
+print("Employee {} is done with tasks({}/{}):".format(
     user.get("name"), len(res.get("completed")),
     len(res.get("total"))
 ))
