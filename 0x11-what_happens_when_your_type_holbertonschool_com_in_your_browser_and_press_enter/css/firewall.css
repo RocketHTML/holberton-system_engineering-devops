@@ -1,0 +1,98 @@
+.finger {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background: url('../images/two-finger-touch.png');
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 40px;
+    /*border: 1px red solid;*/
+    top: 63%; /*+5 from .nameserver*/
+    left: 52%; /*+15*/
+}
+
+.nameserver {
+    top: 58%;
+    left: 37%;
+    width: 300px;
+    height: 50px;
+    border: 1px #D7CEB2 solid;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow: hidden;
+}
+
+/*.nameserver > :nth-child(1){
+    background: lightgreen;
+}
+.nameserver > :nth-child(2){
+    background: orange;
+}*/
+.nameserver > :nth-child(3){
+    border-right:none;
+    background: #F37748;
+}
+
+
+
+.frame {
+    padding-top: 5px;
+    padding-left: 15px;
+    border-right: 1px #D7CEB2 dotted;
+}
+
+.node span {
+    top: -30px;
+    left: -50px;
+    display: inline-block;
+    font-size: 20px;
+    color:#D7CEB2;
+    width: 180px;
+    height: 50px;
+    /*border: 1px solid red;*/
+}
+
+
+
+.node.left{left: 20%;}
+.node.right{left: 40%;}
+    .bigtriangle.chip{left: calc(40% + 10px); border-bottom-color: lightgreen;}
+    .label{left: 3%; font-size: 30px; color:#93A8AC;;}
+
+.node.one{top: 10%;}
+    .chip.one{top: calc(10% + 7px);}
+    .label.one{top: calc(10% - 40px);}
+.node.two{top: 30%;}
+    .chip.two{top: calc(30% + 7px);}
+    .label.two{top: calc(30% - 40px);}
+.node.three{top: 50%;}
+    .chip.three{top: calc(50% + 7px);}
+    .label.three{top: calc(50% - 40px); color:#F37748;}
+
+@keyframes accept {
+    100%{}
+    50%{left:20%;}
+}
+
+@keyframes redirect {
+    100%{}
+    75%{left:20%;}
+    50%{left:30%; border-bottom-color: gold;}
+    25%{left:20%; border-bottom-color: #93A8AC;}
+}
+
+@keyframes deny {
+    100%{border-bottom-color: #F37748; opacity:.7;}
+    51%{border-bottom-color: #F37748; opacity:.7;}
+    50%{left:calc(20% + 5px); border-bottom-color: lightgreen;
+        opacity:.5;}
+}
+
+.chip{animation-duration: 4s; 
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;}
+.chip.one{animation-name: accept;}
+.chip.two{animation-name: redirect;}
+.chip.three{animation-name: deny;}
+

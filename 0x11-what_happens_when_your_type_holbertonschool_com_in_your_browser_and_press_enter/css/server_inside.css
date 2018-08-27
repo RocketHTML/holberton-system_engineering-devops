@@ -1,0 +1,150 @@
+.node {
+    width: 400px;
+    height: 400px;
+    opacity: .5;
+    top: 30%;
+}
+
+.nameserver {
+    /*z-index: -1;*/
+    opacity: 1;
+}
+
+.node span {
+    font-size: 20px;
+    color: white;
+    top: -30;
+}
+
+.nameserver span.footer {
+    position: absolute;
+    /*display: inline-block;*/
+    border: 1px solid transparent;
+    left: 0px;
+    bottom: 0px;
+}
+
+/*  */
+
+.node.one {left: 20px;}
+.node.two {left: 470px;}
+.node.three {left: 920px;}
+
+/* positioning top of elements */
+
+.webserver, .appserver {top: calc(30% + 40px);}
+.codebase, .sql {top: calc(30% + 240px);}
+.codebase {margin-top: 40px;}
+.sql {margin-left: 40px;}
+
+/* positioning left of elements */
+
+.webserver.one, .codebase.one{left: calc(30px + 20px); /* nodeone.left + 30*/}
+.webserver.two, .codebase.two{left: calc(30px + 470px);}
+.webserver.three, .codebase.three{left: calc(30px + 920px);}
+
+/*  */
+
+.appserver.one, .sql.one{left: calc(30px + 20px + 180px);}
+.appserver.two, .sql.two{left: calc(30px + 470px + 180px);}
+.appserver.three, .sql.three{left: calc(30px + 920px + 180px);}
+
+/* declaring shape of elements */
+
+.webserver {width: 130px; height: 130px;}
+.appserver {width: 150px; height: 90px;}
+.codebase {width: 160px; height: 80px;}
+.sql {width: 80px; height: 130px;}
+
+.sql.three {display: none;}
+
+/* positioning all chips */
+.web.chip, .app.chip {border-bottom-color: pink;top:calc(30% + 80px);}
+.app.chip {transform: rotate(90deg);}
+.code.chip {border-bottom-color: lightgreen;top:calc(30% + 240px + 60px);}
+.db.chip {border-bottom-color: gold;top:calc(30% + 240px + 15px);}
+
+.chip {z-index: 0; border-bottom-width: 7px; }
+
+/*  */
+
+.web.chip.web1_to_outside{left: calc(30px + 20px + 40px); 
+    transform: rotate(135deg);}
+.web.chip.web1_to_app1{left: calc(30px + 20px + 60px);}
+
+.web.chip.web2_to_outside{left: calc(30px + 470px + 40px);
+    transform: rotate(90deg);}
+.web.chip.web2_to_app2{left: calc(30px + 470px + 60px);}
+
+.web.chip.web3_to_outside{left: calc(30px + 920px + 40px);
+    transform: rotate(45deg);}
+.web.chip.web3_to_app3{left: calc(30px + 920px + 60px);}
+
+.code.chip.code1_to_web1{left:calc(30px + 20px + 55px);}
+.code.chip.code2_to_web2{left:calc(30px + 470px + 55px);}
+.code.chip.code3_to_web3{left:calc(30px + 920px + 55px);}
+
+.app.chip.app1_to_database1 {left:calc(30px + 20px + 180px + 70px);}
+.app.chip.app2_to_database2 {left:calc(30px + 470px + 180px + 70px);}
+
+.db.chip {left:calc(30px + 20px + 240px);}
+
+/* animation frames */
+
+@keyframes to_outside {
+    0% {}
+    100%{}
+    50%{left: calc(30px + 470px + 40px); top:-50px;}
+}
+
+@keyframes to_app {
+    0%{}
+    100%{}
+    50%{margin-left: 180px;}
+}
+
+@keyframes to_web {
+    0%{}
+    100%{top:calc(30% + 40px + 60px)}
+}
+
+@keyframes to_db {
+    0%{}
+    100%{}
+    50%{margin-top: 200px;}
+}
+
+@keyframes db_to_db {
+    to {margin-left: 450px;}
+}
+
+/* animations */
+.chip {
+    animation-timing-function: ease-in-out;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+.web.out.chip {
+    animation-name: to_outside;
+}
+
+.web.out.web1_to_outside {animation-delay: 2s;}
+.web.out.web2_to_outside {animation-delay: .5s;}
+.web.out.web3_to_outside {animation-delay: 1s;}
+
+.web.app.chip {animation-name: to_app;}
+
+.code.chip {
+    animation-name: to_web;
+    animation-duration: 3s;
+}
+
+.app.as.chip {
+    animation-name: to_db;
+}
+
+.db.chip {
+    transform: rotate(90deg);
+    animation-name: db_to_db;
+}
+

@@ -1,0 +1,188 @@
+.node.one {
+    left: 50px;
+    top: 200px;
+}
+
+.node.two {
+    left: 150px;
+    top: 175px;
+}
+
+.node.three {
+    left: 250px;
+    top: 100px;
+}
+
+.node.four {
+    left: 350px;
+    top: 150px;
+}
+
+.node.five {
+    left: 450px;
+    top: 175px;
+}
+
+.node.visitor {
+    left: 500px;
+    top: 250px;
+    border: 1px solid #ECC30B;
+
+}
+
+/*              */
+
+.bigtriangle {
+    left: 300px;
+    top: 310px;
+}
+
+/*              */
+
+.nameserver.one {
+    left: 25px;
+    top: 275px;
+}
+
+.nameserver.two {
+    left: 50px;
+    top: 275px;
+}
+
+.nameserver.three {
+    left: 75px;
+    top: 275px;
+}
+
+/*              */
+
+@keyframes visitor_to_five {
+    from {
+        left: 510px;
+        top: 250px;
+    }
+    to {
+        left: 450px;
+        top: 175px;
+    }
+}
+
+@keyframes five_to_four {
+    from {
+        left: 450px;
+        top: 175px;
+    }
+    to {
+        left: 350px;
+        top: 150px;
+    }
+}
+
+@keyframes four_to_three {
+    from {
+        left: 350px;
+        top: 150px;
+    }
+    to {
+        left: 250px;
+        top: 100px;
+    }
+}
+
+@keyframes three_to_two {
+    from {
+        left: 250px;
+        top: 120px;
+    }
+    to {
+        left: 150px;
+        top: 185px;
+    }
+}
+
+@keyframes two_to_one {
+    from {
+        left: 150px;
+        top: 175px;
+    }
+    to {
+        left: 50px;
+        top: 210px;
+    }
+}
+
+@keyframes one_to_nameservers {
+    from {
+        left: 60px;
+        top: 200px;
+    }
+    to {
+        left: 53px;
+        top: 275px;
+    }
+}
+
+@keyframes visitor_to_webserver {
+    from {
+        left: 510px;
+        top: 260px;
+    }
+    to {
+        left: 302px;
+        top: 317px;
+    }
+}
+
+.smalltriangle.one{
+    transform: rotate(180deg);
+    animation: one_to_nameservers 2.5s ease-in-out 0.2s infinite;
+}
+
+.smalltriangle.two{
+    transform: rotate(-90deg);
+    animation: two_to_one 2.5s ease-in-out 0.2s infinite;
+}
+.smalltriangle.three{
+    transform: rotate(-150deg);
+    animation: three_to_two 2.5s ease-in-out 0.2s infinite;
+}
+.smalltriangle.four{
+    transform: rotate(-40deg);
+    animation: four_to_three 2.5s ease-in-out 0.2s infinite;
+}
+.smalltriangle.five{
+    transform: rotate(-70deg);
+    animation: five_to_four 2.5s ease-in-out 0.2s infinite;
+}
+.smalltriangle.six{
+    transform: rotate(-20deg);
+    animation: visitor_to_five 2s ease-in-out 0.2s infinite;
+}
+.smalltriangle.seven{
+    left: 510px;
+    top: 260px;
+    transform: rotate(-110deg);
+    animation: visitor_to_webserver 7s ease-in-out 5s infinite;
+}
+
+/*              */
+
+.label.nodes {
+    left: 285px;
+    top: 65px;
+}
+
+.label.nameservers {
+    left: 25px;
+    top: 300px;
+}
+
+.label.visitor {
+    left: 530px;
+    top: 260px;
+}
+
+.label.website {
+    left: 250px;
+    top: 340px;   
+}
