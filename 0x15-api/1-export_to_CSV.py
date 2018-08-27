@@ -16,7 +16,7 @@ def csv_functions():
         """
             determintes if csv should be created
         """
-        return len(argv) > 2
+        return True
 
     def write_csv(todos, username):
         """
@@ -37,7 +37,7 @@ def csv_functions():
             writer = csv.DictWriter(csvfile, fieldnames=fields,
                                     quoting=csv.QUOTE_ALL)
 
-        for row in rows:
+            for row in rows:
                 writer.writerow(row)
 
 
