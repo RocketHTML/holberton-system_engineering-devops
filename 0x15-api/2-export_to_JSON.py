@@ -23,7 +23,7 @@ def json_functions():
             writes to json file
         """
         tasks = []
-        headers = [("task", "title"), ("completed","completed"),
+        headers = [("task", "title"), ("completed", "completed"),
                    ("username", "username")]
         rows = append_username(todos, username)
         for row in rows:
@@ -35,6 +35,7 @@ def json_functions():
         output = {uid: tasks}
         with open("{}.json".format(uid), 'w') as fs:
             json.dump(output, fs)
+
 
 def csv_functions():
 
