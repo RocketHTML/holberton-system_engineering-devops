@@ -28,10 +28,7 @@ def filter_by_user(datalist, uid):
     return ({"total": total, "completed":  completed})
 
 
-if len(argv) == 1:
-    uid = 1
-else:
-    uid = int(argv[1])
+uid = int(argv[1])
 todo_url = "https://jsonplaceholder.typicode.com/todos"
 user_url = "https://jsonplaceholder.typicode.com/users/{}".format(
     uid
