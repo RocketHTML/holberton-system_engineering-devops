@@ -22,22 +22,24 @@ def csv_functions():
         """
             adds username to list of todos
         """
-        [t.update(**{"username" : username}) for t in todos]
+        [t["data"].update(**{"username": username}) for t in todos]
         header = ["userId", "username", "completed", "title"]
         rows = []
         for t in todos:
             new_dict = {}
             for field in header:
-                new_dict[field] = t.get(field)
+                new_dict[field] = t["data"].get(field)
             rows.append(new_dict)
 
         with open("{}.csv".format(rows[0]["userId"]),
                   "w", newline="") as csvfile:
             fields = header
-            writer = csv.DictWriter(csvfile, fieldnames=fields)
+            writer = csv.DictWriter(csvfile, fieldnames=fields,
+                                    quoting=csv.QUOTE_ALL)
 
-            for row in rows:
+        for row in rows:
                 writer.writerow(row)
+
 
 def helper_functions():
 
@@ -64,7 +66,7 @@ def helper_functions():
             if todo.get("userId") == uid:
                 if todo.get("completed"):
                     completed = True
-                total.append({"data" : todo, "completed" : completed})
+                total.append({"data": todo, "completed": completed})
         return (total)
 
 
@@ -75,7 +77,7 @@ if __name__ == "__main__":
     uid = get_uid()
     todo_url = "https://jsonplaceholder.typicode.com/todos"
     user_url = "https://jsonplaceholder.typicode.com/users/{}".format(uid)
-    todo_res = requests.get(todo_url) 
+    todo_res = requests.get(todo_url)
     user_res = requests.get(user_url)
     tcode = todo_res.status_code
     ucode = user_res.status_code
