@@ -9,8 +9,8 @@
     Subsequent Lines
         Display the task_title of completed tasks
 """
-from sys import argv
 import requests
+from sys import argv
 
 
 def filter_by_user(datalist, uid):
@@ -28,7 +28,10 @@ def filter_by_user(datalist, uid):
     return ({"total": total, "completed":  completed})
 
 
-uid = int(argv[1])
+if len(argv) == 1:
+    uid = 1
+else:
+    uid = int(argv[1])
 todo_url = "https://jsonplaceholder.typicode.com/todos"
 user_url = "https://jsonplaceholder.typicode.com/users/{}".format(
     uid
