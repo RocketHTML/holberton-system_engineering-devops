@@ -40,6 +40,7 @@ def json_functions():
         #    json.dump(output, fs)
         return json.dumps(output)
 
+
 def csv_functions():
     """
         Functions related to csv interaction
@@ -130,7 +131,7 @@ if __name__ == "__main__":
     json_functions()
     json_mode = in_json_mode()
     csv_mode = in_csv_mode()
-    #uid = get_uid()
+    # uid = get_uid()
     todo_url = "https://jsonplaceholder.typicode.com/todos"
     user_url = "https://jsonplaceholder.typicode.com/users"
     todo_res = requests.get(todo_url)
