@@ -16,7 +16,7 @@ def number_of_subscribers(subreddit):
                'User-Agent': 'Ruby'}
 
     url = requests.get('https://api.reddit.com/r/{}/about'.format(subreddit),
-                       headers=headers)
+                       headers=headers, allow_redirects=False)
 
     if url.status_code != 200:
         return 0

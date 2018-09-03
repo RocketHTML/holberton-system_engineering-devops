@@ -14,7 +14,7 @@ def top_ten(subreddit):
                'User-agent': 'Ruby'}
 
     url = requests.get('https://api.reddit.com/r/{}/hot'.format(subreddit),
-                       headers=headers).json()
+                       headers=headers, allow_redirects=False).json()
 
     if url.status_code == 200:
         for title in range(10):
