@@ -3,7 +3,7 @@
 Here's five basics every developer should know, as they developing those amazing, scalable web applications.
 
 ## 1. IP Address
-Every device connected to the internet is identified by a unique IP address. One computer communicates with another by sending data in segments, known as frames, and attaching the IP address to the header of each frame. The receiving computer can then respond the sender by simply swapping the source and destination addresses.
+Every device connected to the internet is identified by a unique IP address. One computer communicates with another by sending data in segments, known as frames, and attaching the IP address to the header of each frame. The receiving computer can then respond to the sender by simply swapping the source and destination addresses.
 
 ![dataframe](https://github.com/RocketHTML/holberton-system_engineering-devops/blob/master/0x11-what_happens_when_your_type_holbertonschool_com_in_your_browser_and_press_enter/gifs/tcp_ip.gif)
 
